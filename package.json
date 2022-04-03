@@ -1,23 +1,24 @@
 {
-  "name": "native-kla-api",
+  "name": "wingerstore-api",
   "version": "1.0.0",
-  "description": "Native kla api",
-  "main": "server.js",
-  "author": "kolynzb",
-  "license": "ISC",
+  "description": "This is the wingerstore omline store restful service",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js ",
-    "dev": "nodemon server.js "
+    "dev": "nodemon --exec babel-node src/server.js",
+    "debug": "yarn dev -- --inspect",
+    "test": "jest --runInBand",
+    "test:watch": "yarn test -- --watch "
   },
+  "repository": "https://github.com/kolynzb/wingerstore-api.git",
+  "author": "kolynzb <collinsbenda360@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
-    "pg": "^8.7.1"
   }
 }
