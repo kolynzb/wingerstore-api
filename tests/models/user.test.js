@@ -53,6 +53,7 @@ describe('User', () => {
         const users = await User.findAll();
         expect(users.length).toBe(1);
         expect(users[0].email).toEqual(email);
+        expect(users[0].username).toEqual(username);
         expect(users[0].password).not.toEqual(password);
       });
     });

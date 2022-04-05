@@ -15,6 +15,9 @@ export function registerModels(sequelize) {
   }
 
   // register associations
+  Object.keys(models).forEach((modelName) => {
+    models[modelName].associate(models);
+  });
   models.sequelize = sequelize;
 }
 
