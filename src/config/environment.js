@@ -1,7 +1,7 @@
 const environment = {
   port: process.env.PORT || 8000,
   nodeEnv: process.env.NODE_ENV || 'production',
-  saltRounds: process.env.SALT_ROUNDS || 10,
+  saltRounds: parseInt(process.env.SALT_ROUNDS, 10) || 10,
   jwtAcessTokenSecret:
     process.env.JWT_ACCESS_TOKEN_SECRET ||
     'd1b1089f2e438091b969a2023da0ac971515fdb3bbfa5e62906eb9d7576a1a8d69512f498e8ff1b7f8f4b7bc4896b0876212649bd9c9a1c41829051c80d844d4',

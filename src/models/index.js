@@ -9,7 +9,8 @@ export function registerModels(sequelize) {
   const filteredModelFiles = modelFiles.filter((file) => file !== thisfile && file.slice(-3) === '.js');
 
   for (const file of filteredModelFiles) {
-    const model = require(path.join.__dirname, file).default(sequelize);
+    const model = require(path.join(__dirname, file)).default(sequelize);
+    console.log('model ', model);
     models[model.name] = model;
   }
 
