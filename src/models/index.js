@@ -10,13 +10,14 @@ export function registerModels(sequelize) {
 
   for (const file of filteredModelFiles) {
     const model = require(path.join(__dirname, file)).default(sequelize);
-    console.log('model ', model);
     models[model.name] = model;
   }
 
   // register associations
   Object.keys(models).forEach((modelName) => {
-    models[modelName].associate(models);
+    if (models[modelName].associate) {
+      models[modelName].associate(models);
+    }
   });
   models.sequelize = sequelize;
 }
