@@ -21,3 +21,5 @@
   `docker exec -it <container-name> bash`
 - Display Containers
   `docker ls`
+
+- last stop _add login controller_

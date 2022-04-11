@@ -2,7 +2,7 @@ import './config';
 import Database from './database';
 import environment from './config/environment';
 import dbConfig from './config/database';
-import bcrypt from 'bcrypt';
+
 (async () => {
   try {
     //connect Db
