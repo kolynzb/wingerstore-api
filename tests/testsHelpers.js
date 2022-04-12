@@ -1,7 +1,7 @@
 import '../src/config';
 import Database from '../src/database';
 import dbConfig from '../src/config/database';
-import { request } from 'supertest';
+import request from 'supertest';
 
 let db;
 
@@ -22,8 +22,8 @@ export default class TestHelpers {
     return new App().getApp();
   }
   static async registerNewUser(options = {}) {
-    const { email = 'test@example.com', password = 'test123#', endpoint = '/v1/register' } = options;
+    const { email = 'test@example.com', password = 'test123#', endpoint = '/v1/register', username = 'test' } = options;
 
-    return request(TestHelpers.getApp()).post(endpoint).send({ email, password });
+    return request(TestHelpers.getApp()).post(endpoint).send({ email, password, username });
   }
 }
